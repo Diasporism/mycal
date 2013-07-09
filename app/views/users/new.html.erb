@@ -1,0 +1,8 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :username, placeholder: 'John Doe', required: true %>
+  <%= f.input :email, placeholder: 'user@example.com', required: true %>
+  <%= f.input :password, required: true %>
+  <%= f.input :password_confirmation, required: true %>
+  <%= f.button :submit %>
+<% end %>
