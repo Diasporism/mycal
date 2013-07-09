@@ -6,6 +6,7 @@ MyCal::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
-  resources :users
-  resources :sessions
+  resources :users, only: [:show, :new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :groups, only: [:show, :new, :create]
 end

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708231544) do
+ActiveRecord::Schema.define(:version => 20130709005250) do
+
+  create_table "groups", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name",                :null => false
+    t.text     "description",         :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "phone_number",        :null => false
+    t.string   "address",             :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",         :null => false

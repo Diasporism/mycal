@@ -1,0 +1,13 @@
+<div class='span12'>
+  <%= image_tag @group.avatar.url(:medium) %>
+  <br>
+  <%= "Name: #{@group.name}" %>
+  <br>
+  <%= "Description: #{@group.description}" %>
+  <br>
+  <%= "Phone Number: #{@group.phone_number}" %>
+  <br>
+  <%= "Address: #{@group.address}" %>
+  <br>
+  <%= "Owner of Group: #{@group.user.username}" %>
+</div>

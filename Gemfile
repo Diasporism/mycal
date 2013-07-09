@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'paperclip', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

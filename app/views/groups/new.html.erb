@@ -1,0 +1,8 @@
+<%= simple_form_for @group do |f| %>
+  <%= f.input  :name, placeholder: 'UW Madison', required: true %>
+  <%= f.input  :description, required: true %>
+  <%= f.input  :phone_number, placeholder: '6085551234', required: true %>
+  <%= f.input  :address, placeholder: '1234 Herp Derp Lane Madison, WI 50505', required: true %>
+  <%= f.file_field :avatar %>
+  <%= f.button :submit %>
+<% end %>
