@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
     @group = Group.new(params[:group])
     @group.user_id = current_user.id
     if @group.save
+      Calendar.create(owner_id: @group.id, owner_type: 'Group')
       redirect_to group_path(@group.id), notice: 'Group successfully created!'
     else
       flash.alert = 'Please correct the errors below. Note: only Jpeg, PNG, and Gif images are allowed'

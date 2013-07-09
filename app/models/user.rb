@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_many :groups
+  has_one  :calendar, as: :owner
 
   attr_accessible :username, :email, :password, :password_confirmation
 

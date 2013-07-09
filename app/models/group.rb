@@ -1,6 +1,8 @@
 class Group < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
+
   belongs_to :user
+  has_one    :calendar, as: :owner
 
   attr_accessible :name, :description, :phone_number, :address, :avatar
 

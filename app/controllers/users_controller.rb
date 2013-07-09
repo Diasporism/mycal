@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       auto_login(@user)
+      Calendar.create(owner_id: @user.id, owner_type: 'User')
       redirect_to root_url, :notice => "Signed up!"
     else
       render :new
